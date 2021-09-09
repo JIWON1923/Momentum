@@ -13,8 +13,9 @@
 
 ## Variables
 - 값 저장 및 유지
-- const 변수명 = 값; 
 - 변수명은 보통 CamelCase로 작성 (Python : SnakeCase)
+- const 변수명 = 값;  // let 변수명 = 값; // var
+- 항상 const 사용, let은 필요할 때만 사용, var은 절대 사용하지 말 것.
 
 ## 기타
 - console.log( ) : console 창에 log 찍는 것 (print)
