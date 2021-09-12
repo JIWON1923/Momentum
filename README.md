@@ -8,6 +8,7 @@
 - 변수명은 보통 CamelCase로 작성 (Python : SnakeCase)
 - const 변수명 = 값;  // let 변수명 = 값; // var
 - 항상 const 사용, let은 필요할 때만 사용, var은 절대 사용하지 말 것.
+- 즉, 변수의 업데이트가 필요할 때에는 let 키워드로 변수를 사용해야한다. 
 
 ## Basic Data Type
 ### number
@@ -26,7 +27,7 @@
 - const daysOfWeek = [mon, tue, wed, thu, fri, sat, sun];
 - daysOfWeek.push(값) ; // 값을 배열 맨 뒤에 삽입한다.
 - 각 요소는 콤마로 구분되며, 배열의 첫 인덱스는 0부터 시작함.
-- 같은 type일 필요는 없음. 정수, String, boolean 등 섞어서 list를 만들 수 있음.
+- 같은 type일 필요는 없음. 정수, String, boolean 등 섞어서 list를 만들 수 있음. (변수도 가능)
 ### Object
 - const player = {
     name: "jiwon",
@@ -41,7 +42,7 @@ function sayHello( variableName ){
     //Code
     console.log("Hello!")
 }
--  
+-  argument는 함수 블럭 내에서만 존재하는 변수이다.
 
 ## 기타
 - console.log( ) : console 창에 log 찍는 것 (print)
