@@ -68,7 +68,8 @@ function sayHello( variableName ){
 - 클릭, 인터넷 연결 끊김 등 다양한 현상을 이벤트라고 함.
 - 해당 이벤트를 감시하는 것이 EventListener
 - function 함수명( ){ body code; } // 이벤트 발생했을 때 어떻게 대처할지 작성
-- HTML_Element.addEventListener("동작//click", 함수명)
+- HTML_Element.addEventListener("동작//click", 함수명) = Element.on이벤트명 = 함수명
+- 예: title.onclick = handleTitleclick; 이런식으로 작성 가능.
 - Web APIs : JavaScript 관점 (이벤트 구글링 시 활용) // console.dir의 on~ 속성이 Event를 의미함.
 ### 기타
 - document.getElementByid( "id값" ) // id 값을 가진 태그 출력
