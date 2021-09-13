@@ -71,6 +71,7 @@ function sayHello( variableName ){
 - HTML_Element.addEventListener("동작//click", 함수명) = Element.on이벤트명 = 함수명
 - 예: title.onclick = handleTitleclick; 이런식으로 작성 가능.
 - Web APIs : JavaScript 관점 (이벤트 구글링 시 활용) // console.dir의 on~ 속성이 Event를 의미함.
+- 즉, 항목을 찾고, 이벤트를 설정한 후 반응하는 단계로 코딩하기.
 ### 기타
 - document.getElementByid( "id값" ) // id 값을 가진 태그 출력
 - console.dir("id") // 해당 태그의 모든 속성값 출력 (JS의 Object)
