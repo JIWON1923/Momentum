@@ -44,5 +44,17 @@ function sayHello( variableName ){
 }
 -  argument는 함수 블럭 내에서만 존재하는 변수이다.
 
+## Conditional Statement
+### if - else statement
+- if (condition) {
+    // condition == true
+} else if (condition){
+    // condition == true
+} else{
+    위 조건문이 모두 거짓일 경우
+}
 ## 기타
 - console.log( ) : console 창에 log 찍는 것 (print)
+-  console.log(typeof variableName) : 변수의 타입을 출력.
+- 형 변환 passe 어쩌고  (parseInt : int 형으로 변경. )
+- NaN : Not a Number (숫자가 아님)

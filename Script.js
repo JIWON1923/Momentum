@@ -1,18 +1,10 @@
-const Calculator = {
-    plus: function(a, b){ return a+b; },
-    minus: function (a,b) { return a-b; },
-    multi: function (a,b) { return a*b; },
-    divide: function (a,b) { return a/b; },
-    power: function (a,b) { return a**b; },
-};
-
-result = Calculator.plus(10,5);
-console.log(result);
-result = Calculator.multi(10,5);
-console.log(result);
-result = Calculator.minus(10,5);
-console.log(result);
-result = Calculator.divide(10,5);
-console.log(result);
-result = Calculator.power(10,5);
-console.log(result);
+const age = parseInt(prompt("How old are you?"))
+if(isNaN(age) || age < 0){ // age == NaN (Number가 아닐 경우)
+    // condition == true
+    console.log("Please write a real positive number.")
+} else if ( age < 19 ){
+    console.log("You are too young.")
+}
+else{
+    console.log("You can drink.")
+}
