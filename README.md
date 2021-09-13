@@ -58,3 +58,20 @@ function sayHello( variableName ){
 -  console.log(typeof variableName) : 변수의 타입을 출력.
 - 형 변환 passe 어쩌고  (parseInt : int 형으로 변경. )
 - NaN : Not a Number (숫자가 아님)
+
+## JavaScript on the Browser
+### document
+- HTML을 가리키는 객체
+- 즉, Browser가 document 객체를 JS에게 전달해줌 : Browser가 HTML과 JS를 연결해줌
+- JS는 Document를 통해 속성 값을 읽고, 변경할 수 있음.
+### Event
+- 클릭, 인터넷 연결 끊김 등 다양한 현상을 이벤트라고 함.
+- 해당 이벤트를 감시하는 것이 EventListener
+- function 함수명( ){ body code; } // 이벤트 발생했을 때 어떻게 대처할지 작성
+- HTML_Element.addEventListener("동작//click", 함수명)
+### 기타
+- document.getElementByid( "id값" ) // id 값을 가진 태그 출력
+- console.dir("id") // 해당 태그의 모든 속성값 출력 (JS의 Object)
+- document.getElementsByTagName("태그명") // 배열로 출력
+- document.querySelector(".클래스명 태그명") // CSS selector (첫번째 요소만 출력됨) .클래스명 대신 #아이디 가능.
+- document.querySelectorAll(".클래스명 태그명") // 모든 요소 출력
