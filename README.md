@@ -72,6 +72,11 @@ function sayHello( variableName ){
 - 예: title.onclick = handleTitleclick; 이런식으로 작성 가능.
 - Web APIs : JavaScript 관점 (이벤트 구글링 시 활용) // console.dir의 on~ 속성이 Event를 의미함.
 - 즉, 항목을 찾고, 이벤트를 설정한 후 반응하는 단계로 코딩하기.
+### Class
+- className, classList 확인하기
+- classList가 매우 유용하게 사용된다.
+- contain : 있는지 확인, remove: 클래스 이름 제거, add : 추가
+- toggle : 있으면 제거, 없으면 추가
 ### 기타
 - document.getElementByid( "id값" ) // id 값을 가진 태그 출력
 - console.dir("id") // 해당 태그의 모든 속성값 출력 (JS의 Object)
