@@ -83,3 +83,9 @@ function sayHello( variableName ){
 - document.getElementsByTagName("태그명") // 배열로 출력
 - document.querySelector(".클래스명 태그명") // CSS selector (첫번째 요소만 출력됨) .클래스명 대신 #아이디 가능.
 - document.querySelectorAll(".클래스명 태그명") // 모든 요소 출력
+
+## Log In
+- 정보 저장을 위해 HTML에 input tag, button tag 추가.  (class id 필수!)
+- 위 두 태그를 js로 불러오기 위해 getElementById 또는 querySelector로 불러와야함. (정보 저장을 위해)
+- button click Event 등록
+- input에 입력한 정보븐 value에 저장됨.

@@ -1,7 +1,13 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+//const loginForm = document.querySelector("#login-form"); //HTML element. 이걸 없애고 한 줄로 코딩할 수 있음.
+//const loginInput = loginForm.querySelector("input");
+//const loginButton = loginForm.querySelector("button");
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-function handleTitleClick(){
-    h1.classList.toggle("clicked")
-}
 
-h1.addEventListener("click", handleTitleClick);
+function onLoginBtnClick(){
+    // input value가 공백이어도 Button이 성공적으로 눌리는 문제점이 있음.
+    console.dir(loginInput); //  value에 값이 있음을 확인할 수 있음.
+    console.log("Click!!");
+ }
+loginButton.addEventListener("click", onLoginBtnClick); // Click 감지
