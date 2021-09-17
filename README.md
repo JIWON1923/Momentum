@@ -85,7 +85,13 @@ function sayHello( variableName ){
 - document.querySelectorAll(".클래스명 태그명") // 모든 요소 출력
 
 ## Log In
+### 기본 로그인 폼 만들기 (HTML JS 사용)
 - 정보 저장을 위해 HTML에 input tag, button tag 추가.  (class id 필수!)
 - 위 두 태그를 js로 불러오기 위해 getElementById 또는 querySelector로 불러와야함. (정보 저장을 위해)
 - button click Event 등록
 - input에 입력한 정보븐 value에 저장됨.
+### User Name의 유효성 확인
+- 위 폼은 UserName이 입력되지 않아도 버튼이 눌리는 문제점이 있음. 이를 해결하기 위해 조건문을 사용하여 고쳤다.
+- 조건문 대신 HTML 태그를 사용하여 유효성을 검사할 수 있다. (required : 무조건 입력해야함. maxlength: 최대 길이)
+- 위 속성을 사용하기 위해서는 반드시 input 태그가 form 내에 있어야 한다. (div 대신 form 태그 사용)
+- 이 방법으로 코드를 고치게 되면 input이 성공적으로 될 때마다 (button을 누르거나 Enter를 누를 때마다) submit이 되어 페이지가 새로고침되는 문제가 발생한다. 이 문제를 해결해야한다. 
