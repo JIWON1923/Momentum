@@ -94,4 +94,9 @@ function sayHello( variableName ){
 - 위 폼은 UserName이 입력되지 않아도 버튼이 눌리는 문제점이 있음. 이를 해결하기 위해 조건문을 사용하여 고쳤다.
 - 조건문 대신 HTML 태그를 사용하여 유효성을 검사할 수 있다. (required : 무조건 입력해야함. maxlength: 최대 길이)
 - 위 속성을 사용하기 위해서는 반드시 input 태그가 form 내에 있어야 한다. (div 대신 form 태그 사용)
-- 이 방법으로 코드를 고치게 되면 input이 성공적으로 될 때마다 (button을 누르거나 Enter를 누를 때마다) submit이 되어 페이지가 새로고침되는 문제가 발생한다. 이 문제를 해결해야한다. 
+- 이 방법으로 코드를 고치게 되면 input이 성공적으로 될 때마다 (button을 누르거나 Enter를 누를 때마다) submit이 되어 페이지가 새로고침되는 문제가 발생한다. 이 문제를 해결해야한다.
+### Login Form에서 Submit 기본 설정 변경하기
+- Submit에 성공한다면 (엔터, 버튼 클릭) 브라우저는 성공되는 즉시 페이지를 새로고침한다.
+- 이제는 Button Listener를 없애고, Submit Listener를 작성해야한다.
+- EventListener는 첫번째 argument로 여러 정보를 전송한다. (확인코드 있음)
+- preventDefault를 호출하기 위해 eventListener 첫번째 argument 추가.
