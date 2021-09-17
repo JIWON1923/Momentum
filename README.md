@@ -111,3 +111,5 @@ function sayHello( variableName ){
 - 작은 DB라고 생각하면 된다.
 - 새로고침해도 없어지지 않음.
 - 이를 이용하여 userName이 있다면, 자동 로그인처럼 기능만들 수 있음.
+- 우선 form 과 h1 모두 숨겨진 상태로 브라우저 시작.
+- getItem을 통해 null이면 form을 제공, 아니라면 h1 제공하여 구현.
