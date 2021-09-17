@@ -100,3 +100,10 @@ function sayHello( variableName ){
 - 이제는 Button Listener를 없애고, Submit Listener를 작성해야한다.
 - EventListener는 첫번째 argument로 여러 정보를 전송한다. (확인코드 있음)
 - preventDefault를 호출하기 위해 eventListener 첫번째 argument 추가.
+### Login User에게 인사하기. (From은 제거)
+- 방법1 : HTML 태그 직접 제거
+- 방법2 : CSS hidden 함수 사용!
+- 1. CSS 파일에 클래스 네임 선언(hidden)=> display: none;
+- 2. submit 되면, classname에 hidden을 추가하면 끝 (EventListener)
+- form 이름.classList.add("hidden"); 
+- 문자열 결합 시 ₩Hello ${변수명}₩
