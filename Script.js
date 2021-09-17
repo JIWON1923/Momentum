@@ -2,14 +2,14 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden"; // string만 저장할 땐 대문자로 쓰는게 좋다. hidden이 두 번 이상 나오니 변수로 만든다.
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event){
     event.preventDefault();
-    const userName = loginInput.value;// submit 되지만 새로고침은 되지 않음을 확인할 수 있음.
+    const userName = loginInput.value;
     loginForm.classList.add(HIDDEN_CLASSNAME);
     greeting.classList.remove(HIDDEN_CLASSNAME);
-    //greeting.innerText = "Hello " + userName;
     greeting.innerText = `Hello ${userName}`;
+    localStorage.setItem("userName", userName); // local Storage에 userName 키 값에 입력받은 value를 저장. Application tab에서 확인
 }
-loginForm.addEventListener("submit", onLoginSubmit) // submit은 검증 후, Enter 또는 Button을 누를 때 발생.
+loginForm.addEventListener("submit", onLoginSubmit)

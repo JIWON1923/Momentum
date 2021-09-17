@@ -107,3 +107,7 @@ function sayHello( variableName ){
 - 2. submit 되면, classname에 hidden을 추가하면 끝 (EventListener)
 - form 이름.classList.add("hidden"); 
 - 문자열 결합 시 ₩Hello ${변수명}₩
+### Local Storage
+- 작은 DB라고 생각하면 된다.
+- 새로고침해도 없어지지 않음.
+- 이를 이용하여 userName이 있다면, 자동 로그인처럼 기능만들 수 있음.
