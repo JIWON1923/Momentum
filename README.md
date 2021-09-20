@@ -130,3 +130,17 @@ function sayHello( variableName ){
 - padStart() function으로 정의되어있음.
 - string.padStart(2, "0"); // string의 길이는 2, 2가 아니라면 앞에 "0"을 추가한다.
 - padEnd()는 앞에 추가하는 것이 아니라 뒤에 추가하는 것
+
+## Quotes
+- 명언을 list에 담는다. (quote, author 각각)
+- random으로 불러온다.
+### randomness
+- Math 모듈에 포함되어있음.
+- Math.random은 0부터 1까지의 무작위 수를 반환한다. (float형)
+- Math.random * 10 // 0 ~ 10까지의 무작위 수 반환
+- 정수형 변환 (round, ceil, floor)
+- round // 반올림
+- ceil // 올림
+- floor // 내림
+- Math.floor(Math.random * 10) // 0~10까지 무작위 정수를 반환
+
