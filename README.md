@@ -113,3 +113,15 @@ function sayHello( variableName ){
 - 이를 이용하여 userName이 있다면, 자동 로그인처럼 기능만들 수 있음.
 - 우선 form 과 h1 모두 숨겨진 상태로 브라우저 시작.
 - getItem을 통해 null이면 form을 제공, 아니라면 h1 제공하여 구현.
+
+## Clock
+### interver
+- x 초 마다 반복되어 실행되는 함수
+- setInterval( 함수명, ms기준 반복 주기)
+### setTimeout
+- x초 후 딱 한 번ㅁ나 실행되는 함수
+- setTimeout( 함수명, ms 기준 시간)
+### Data Object
+- Date : 오늘 날짜의 객체 생성.
+- Date. 함수명 => getDate() 등
+- 객체에서 날짜, 시간, 요일 등을 불러올 수 있음.
