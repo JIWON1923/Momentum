@@ -125,3 +125,8 @@ function sayHello( variableName ){
 - Date : 오늘 날짜의 객체 생성.
 - Date. 함수명 => getDate() 등
 - 객체에서 날짜, 시간, 요일 등을 불러올 수 있음.
+### 시간 형식
+- 1 등 10 이하의 숫자를 출력할 때 01 두자리 수로 출력하기
+- padStart() function으로 정의되어있음.
+- string.padStart(2, "0"); // string의 길이는 2, 2가 아니라면 앞에 "0"을 추가한다.
+- padEnd()는 앞에 추가하는 것이 아니라 뒤에 추가하는 것
