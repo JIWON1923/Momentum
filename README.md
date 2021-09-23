@@ -144,3 +144,13 @@ function sayHello( variableName ){
 - floor // 내림
 - Math.floor(Math.random * 10) // 0~10까지 무작위 정수를 반환
 
+## Random Background
+- 새로고침할 때 마다 새로운 이미지로 변경하는 방법
+- 무작위 정수를 반환하는 방법으로 랜덤 이미지 선택
+- Name = document.createElement("img") 로 이미지 태그 만들기
+- Name.src ( img/랜덤이미지 )
+- document.body.appendChild(Name); HTML body에 img 추가된다.
+
+## Todo List
+- submit의 기본 동작을 막아 리스트가 추가될 때 마다 새로고침 되는 것을 방지.
+- inputText.value를 통해 submit이 일어날 때 값을 저장해 놓고, 초기화 새 리스트를 받을 수 있도록 설정
