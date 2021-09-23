@@ -154,3 +154,4 @@ function sayHello( variableName ){
 ## Todo List
 - submit의 기본 동작을 막아 리스트가 추가될 때 마다 새로고침 되는 것을 방지.
 - inputText.value를 통해 submit이 일어날 때 값을 저장해 놓고, 초기화 새 리스트를 받을 수 있도록 설정
+- li와 span tag를 추가하여 (createElement, appendChild) 각 리스트를 추가할 수 있지만, 새로고침을 하면 없어지는 문제 발생.
