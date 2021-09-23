@@ -7,4 +7,4 @@ const chosenImages = images[Math.floor(Math.random() * images.length)];
 const backgound = document.createElement("img");
 backgound.src = `img/${chosenImages}`;
 
-document.body.appendChild(backgound); // JS에 존재하던 img 태그를 body(HTML로)
+document.body.appendChild(backgound); // JS에 존재하던 img 태그를 body(HTML로) append 대신 Prepend 쓰면 img 태그가 최 상단에 존재
