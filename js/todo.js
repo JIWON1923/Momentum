@@ -3,10 +3,11 @@ const toDoInput = toDoForm.querySelector("input"); // todo-form 내에 있는 in
 const toDoList = document.getElementById("todo-list");
 const button = document.createElement("button");
 
+const TODOS_KEY = "todos";
 const toDos = []; // todo list 저장을 위한 배열 선언
 
 function saveToDos(){
-    localStorage.setItem("todos",JSON.stringify(toDos)); //localStorage에 저장만하는 함수.
+    localStorage.setItem(TODOS_KEY ,JSON.stringify(toDos)); //localStorage에 저장만하는 함수.
 }
 function paintTodo(newTodo){ // Todo 생성할 때 마다 toDos에 push : handelToDoSubmit 확인 
     const li = document.createElement("li");
@@ -33,3 +34,13 @@ function handleToDoSubmit(event){
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+//function sayHello(item){
+//    console.log("this is", iemt)
+//}
+const savedToDos = localStorage.getItem(TODOS_KEY);
+if (savedToDos){ // localStorage toDos에 무엇인가 존재하면
+    const parseToDos = JSON.parse(savedTodos);  // string을 Object(배열)로 변환
+    //savedToDos.foreach(sayHello);
+    savedTodos.foreach((item)=> console.log("this is", item));
+}
