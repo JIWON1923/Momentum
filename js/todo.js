@@ -6,7 +6,7 @@ const button = document.createElement("button");
 const toDos = []; // todo list 저장을 위한 배열 선언
 
 function saveToDos(){
-    localStorage.setItem("todos",toDos); //localStorage에 저장만하는 함수.
+    localStorage.setItem("todos",JSON.stringify(toDos)); //localStorage에 저장만하는 함수.
 }
 function paintTodo(newTodo){ // Todo 생성할 때 마다 toDos에 push : handelToDoSubmit 확인 
     const li = document.createElement("li");
@@ -29,6 +29,7 @@ function handleToDoSubmit(event){
     toDoInput.value = "";
     toDos.push(newTodo); // 입력받은 값을 todos에 저장
     paintTodo(newTodo);
+    saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

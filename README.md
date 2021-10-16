@@ -166,3 +166,6 @@ function sayHello( variableName ){
 - 현재 문제 : 새로고침하면 모두 사라짐
 - 해결 방법 : Local Storage에 저장
 - 배열에 Todo List를 저장하고, 이를 다시 Local Storage에 저장한다. (Text만 저장할 수 있음)
+- 새로고침 후 두가지 문제 발생 : 화면에 나타나지 않음, 새로운 할 일 적으면 Local Storage 초기화 후 저장됨 => JSON 사용
+- JSON:stringify(대상) : 대상을 string으로 바꿔줌
+
