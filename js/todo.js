@@ -1,21 +1,23 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input"); // todo-form 내에 있는 input 찾기
-//const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const button = document.createElement("button");
-/** 리스트가 추가는 되지만, 새로고침하면 입력했던 모든 정보가 사라지는 문제 */
-function paintTodo(newTodo){
+
+const toDos = []; // todo list 저장을 위한 배열 선언
+
+function saveToDos(){
+    localStorage.setItem("todos",toDos); //localStorage에 저장만하는 함수.
+}
+function paintTodo(newTodo){ // Todo 생성할 때 마다 toDos에 push : handelToDoSubmit 확인 
     const li = document.createElement("li");
-    const span = document.createElement("span"); // list check button도 만들것이기 때문에 span 추가 
+    const span = document.createElement("span"); 
     const button = document.createElement("button");
-    span.innerText=newTodo; // span의 Text = input.value
+    span.innerText=newTodo;
     button.innerText = "X";
     button.addEventListener("click", deleteToDo);
-    li.appendChild(span); // li 안에 span 선언 
+    li.appendChild(span); 
     li.appendChild(button);
     toDoList.appendChild(li);
-
-    
 }
 function deleteToDo(event){
     const li = event.target.parentElement; // 삭제 할 list (event의 부모)
@@ -24,7 +26,8 @@ function deleteToDo(event){
 function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
-    toDoInput.value = ""; // enter 누를 때 input text 창을 비우게 만듦.
+    toDoInput.value = "";
+    toDos.push(newTodo); // 입력받은 값을 todos에 저장
     paintTodo(newTodo);
 }
 

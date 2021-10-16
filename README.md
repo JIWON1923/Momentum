@@ -162,3 +162,7 @@ function sayHello( variableName ){
 - dir을 이용해 찾아보니 parentNode 속성 값이 다름을 알 수 있음.
 - event.target.parentElement로 저장 후 remove 함수로 삭제
 
+##Todo List 저장
+- 현재 문제 : 새로고침하면 모두 사라짐
+- 해결 방법 : Local Storage에 저장
+- 배열에 Todo List를 저장하고, 이를 다시 Local Storage에 저장한다. (Text만 저장할 수 있음)
