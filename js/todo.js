@@ -28,19 +28,16 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo); // 입력받은 값을 todos에 저장
+    toDos.push(newTodo);
     paintTodo(newTodo);
     saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-//function sayHello(item){
-//    console.log("this is", iemt)
-//}
 const savedToDos = localStorage.getItem(TODOS_KEY);
-if (savedToDos){ // localStorage toDos에 무엇인가 존재하면
-    const parseToDos = JSON.parse(savedTodos);  // string을 Object(배열)로 변환
-    //savedToDos.foreach(sayHello);
-    savedTodos.foreach((item)=> console.log("this is", item));
+
+if (savedToDos){
+    const parsedToDos = JSON.parse(savedToDos); // string을 Object(배열)로 변환
+    parsedToDos.forEach(paintTodo);
 }
