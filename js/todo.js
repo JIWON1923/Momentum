@@ -25,6 +25,8 @@ function paintTodo(newTodo){ // Todo 생성할 때 마다 toDos에 push : handel
 function deleteToDo(event){
     const li = event.target.parentElement; // 삭제 할 list (event의 부모)
     li.remove();
+    toDos = toDos.filter((todo) => todo.id != parseInt(li.id) ); // 함수를 1줄로 표현
+    saveToDos();
 }
 function handleToDoSubmit(event){
     event.preventDefault();
