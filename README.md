@@ -173,3 +173,5 @@ function sayHello( variableName ){
 - 현재 문제 : Local Storage에는 저장되어있지만, 새로고침했을 때 나오지 않음
 - JSON.parse() : text를 특정 형태로 알아서  바꾸어줌. 
 - javaScript은 배열에서 foreach라는 함수를 지원한다. 배열의 요소가 함수를 차례대로 실행 (요소의 개수만큼 함수가 반복적으로 실행된다.) arrow function으로 사용했음(일반 함수도 가능)
+- 새로고침 시 Local storage가 초기화되는 문제는 저장하는 변수를 let으로 선언 후 업데이트
+- 해결하지 못한 문제 : 삭제 버튼을 눌러도 Local Storage에서 삭제되지 않음

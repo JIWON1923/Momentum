@@ -4,7 +4,8 @@ const toDoList = document.getElementById("todo-list");
 const button = document.createElement("button");
 
 const TODOS_KEY = "todos";
-const toDos = []; // todo list 저장을 위한 배열 선언
+//const toDos = [];
+let toDos = []; // 새로고침할 때 저장소 비워짐. 이를 해결하기 위해 업데이트 가능하도록 Let으로 변경
 
 function saveToDos(){
     localStorage.setItem(TODOS_KEY ,JSON.stringify(toDos)); //localStorage에 저장만하는 함수.
@@ -39,5 +40,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos){
     const parsedToDos = JSON.parse(savedToDos); // string을 Object(배열)로 변환
+    toDos = parsedToDos; // 업데이트 시 초기화되지 않도록
     parsedToDos.forEach(paintTodo);
 }
