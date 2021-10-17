@@ -175,3 +175,4 @@ function sayHello( variableName ){
 - javaScript은 배열에서 foreach라는 함수를 지원한다. 배열의 요소가 함수를 차례대로 실행 (요소의 개수만큼 함수가 반복적으로 실행된다.) arrow function으로 사용했음(일반 함수도 가능)
 - 새로고침 시 Local storage가 초기화되는 문제는 저장하는 변수를 let으로 선언 후 업데이트
 - 해결하지 못한 문제 : 삭제 버튼을 눌러도 Local Storage에서 삭제되지 않음
+- array를 id와 text를 저장할 수 있도록 바꾸어 저장!

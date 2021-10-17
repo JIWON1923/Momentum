@@ -12,9 +12,10 @@ function saveToDos(){
 }
 function paintTodo(newTodo){ // Todo 생성할 때 마다 toDos에 push : handelToDoSubmit 확인 
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span"); 
     const button = document.createElement("button");
-    span.innerText=newTodo;
+    span.innerText=newTodo.text;
     button.innerText = "X";
     button.addEventListener("click", deleteToDo);
     li.appendChild(span); 
@@ -29,8 +30,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintTodo(newTodo);
+    const newTodoObj = {
+        id:Date.now(), //Random 값으로 id 지정
+        text:newTodo
+    };
+    toDos.push(newTodoObj);
+    paintTodo(newTodoObj);
     saveToDos();
 }
 
