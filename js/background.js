@@ -6,5 +6,6 @@ const chosenImages = images[Math.floor(Math.random() * images.length)];
 //JacaScript를 사용하여 HTML element 만들기
 const backgound = document.createElement("img");
 backgound.src = `img/${chosenImages}`;
-
-document.body.appendChild(backgound); // JS에 존재하던 img 태그를 body(HTML로) append 대신 Prepend 쓰면 img 태그가 최 상단에 존재
+backgound.setAttribute("width", "100%");
+document.body.appendChild(backgound); 
+// JS에 존재하던 img 태그를 body(HTML로) appendChild 대신 Prepend 쓰면 img 태그가 최 상단에 존재
