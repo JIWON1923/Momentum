@@ -1,5 +1,5 @@
 # Momentum
-Todo Web site (HTML, CSS, JavaScript)
+Todo Web site (HTML, CSS, JavaScript)  
 직접 해보고 싶다면, [여기](https://jiwon1923.github.io/Momentum/ "Jiwon's momentum 바로가기")를 클릭하세요.
 ## Initial Screen
 <img width="80%" alt="initial" src="https://user-images.githubusercontent.com/68676844/138104758-2a827f3b-0d06-4215-89c1-adb166df136a.png">
