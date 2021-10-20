@@ -1,178 +1,72 @@
 # Momentum
-## My First JS Project
-- JS, CSS는 단독으로 실행할 수 없으며, 브라우저 내에서 HTML의 도움을 받아야 함.
-- alert : 경고창 (알림창)
+Todo Web site (HTML, CSS, JavaScript)
 
-### Variables
-- 값 저장 및 유지
-- 변수명은 보통 CamelCase로 작성 (Python : SnakeCase)
-- const 변수명 = 값;  // let 변수명 = 값; // var
-- 항상 const 사용, let은 필요할 때만 사용, var은 절대 사용하지 말 것.
-- 즉, 변수의 업데이트가 필요할 때에는 let 키워드로 변수를 사용해야한다. 
+## Initial Screen
+<img width="80%" alt="initial" src="https://user-images.githubusercontent.com/68676844/138104758-2a827f3b-0d06-4215-89c1-adb166df136a.png">
+### Clock
+시간을 형식에 맞춘 후, setInterval을 통해 1초마다 시간을 갱신한다.
+```javascript:clock.js
 
-### Basic Data Type
-#### number
-- Integer : 정수
-- float : 실수
-#### Text
-- String: 문자열
-- 문자열의 결합은 +로 이루어진다.
-#### Boolean
-- true / false의 값을 가진다. (null : 값이 없음을 의미. false와 다름.)
-- 사용자가 로그인 했는가 / 비디오가 재생되고 있는가 등의 값을 저장함.
-- 만약 선언 된 변수에 아무런 값이 없다면 null이라면 undefined로 출력됨. (null과 다름. 비어있음과 값이 정의되지 않음의 차이)
-
-### Data Structure
-#### Array
-- const daysOfWeek = [mon, tue, wed, thu, fri, sat, sun];
-- daysOfWeek.push(값) ; // 값을 배열 맨 뒤에 삽입한다.
-- 각 요소는 콤마로 구분되며, 배열의 첫 인덱스는 0부터 시작함.
-- 같은 type일 필요는 없음. 정수, String, boolean 등 섞어서 list를 만들 수 있음. (변수도 가능)
-#### Object
-- const player = {
-    name: "jiwon",
-    points: 10
-};
-- 각 속성은 . 연산자로 접근 가능함. (player.name)
-- 속성은 언제든지 추가 가능 ! ( player.lastname = "Lee" 오류 안 남.)
-
-### Function
-#### Example code
-function sayHello( variableName ){
-    //Code
-    console.log("Hello!")
+function getClock(){
+    const date = new Date();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minuites = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    clock.innerText = `${hours}:${minuites}:${seconds}`;
 }
--  argument는 함수 블럭 내에서만 존재하는 변수이다.
+getClock();
+setInterval(getClock, 1000);
+```
+### Weather
+openweathermap의 Current Weather Data를 사용하여 온도, 날씨, 지역을 표기한다.
+## Login
+<img width="80%" alt="login" src="https://user-images.githubusercontent.com/68676844/138104863-2cc3ea77-7280-41aa-953d-0e97d5f20142.png">
+User가 이름을 등록하면, Login 입력창을 숨기고, 할 일 입력 창을 띄운다.
+```javascript:greeting.js
 
-### Conditional Statement
-#### if - else statement
-- if (condition) {
-    // condition == true
-} else if (condition){
-    // condition == true
-} else{
-    위 조건문이 모두 거짓일 경우
+function paintGreeting(userName){
+    //greeting.innerText = `${userName}의 할 일!`;
+    //greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.placeholder = `${userName}의 할 일`;
+    toDo.classList.remove(HIDDEN_CLASSNAME);
 }
-### 기타
-- console.log( ) : console 창에 log 찍는 것 (print)
--  console.log(typeof variableName) : 변수의 타입을 출력.
-- 형 변환 passe 어쩌고  (parseInt : int 형으로 변경. )
-- NaN : Not a Number (숫자가 아님)
+```
 
-## JavaScript on the Browser
-### document
-- HTML을 가리키는 객체
-- 즉, Browser가 document 객체를 JS에게 전달해줌 : Browser가 HTML과 JS를 연결해줌
-- JS는 Document를 통해 속성 값을 읽고, 변경할 수 있음.
-### Event
-- 클릭, 인터넷 연결 끊김 등 다양한 현상을 이벤트라고 함.
-- 해당 이벤트를 감시하는 것이 EventListener
-- function 함수명( ){ body code; } // 이벤트 발생했을 때 어떻게 대처할지 작성
-- HTML_Element.addEventListener("동작//click", 함수명) = Element.on이벤트명 = 함수명
-- 예: title.onclick = handleTitleclick; 이런식으로 작성 가능.
-- Web APIs : JavaScript 관점 (이벤트 구글링 시 활용) // console.dir의 on~ 속성이 Event를 의미함.
-- 즉, 항목을 찾고, 이벤트를 설정한 후 반응하는 단계로 코딩하기.
-### Class
-- className, classList 확인하기
-- classList가 매우 유용하게 사용된다.
-- contain : 있는지 확인, remove: 클래스 이름 제거, add : 추가
-- toggle : 있으면 제거, 없으면 추가
-### 기타
-- document.getElementByid( "id값" ) // id 값을 가진 태그 출력
-- console.dir("id") // 해당 태그의 모든 속성값 출력 (JS의 Object)
-- document.getElementsByTagName("태그명") // 배열로 출력
-- document.querySelector(".클래스명 태그명") // CSS selector (첫번째 요소만 출력됨) .클래스명 대신 #아이디 가능.
-- document.querySelectorAll(".클래스명 태그명") // 모든 요소 출력
+## New To do
+<img width="1440" alt="newToDo" src="https://user-images.githubusercontent.com/68676844/138114158-ca268d7b-7cf0-43e7-a03b-f5665f225574.png">
 
-## Log In
-### 기본 로그인 폼 만들기 (HTML JS 사용)
-- 정보 저장을 위해 HTML에 input tag, button tag 추가.  (class id 필수!)
-- 위 두 태그를 js로 불러오기 위해 getElementById 또는 querySelector로 불러와야함. (정보 저장을 위해)
-- button click Event 등록
-- input에 입력한 정보븐 value에 저장됨.
-### User Name의 유효성 확인
-- 위 폼은 UserName이 입력되지 않아도 버튼이 눌리는 문제점이 있음. 이를 해결하기 위해 조건문을 사용하여 고쳤다.
-- 조건문 대신 HTML 태그를 사용하여 유효성을 검사할 수 있다. (required : 무조건 입력해야함. maxlength: 최대 길이)
-- 위 속성을 사용하기 위해서는 반드시 input 태그가 form 내에 있어야 한다. (div 대신 form 태그 사용)
-- 이 방법으로 코드를 고치게 되면 input이 성공적으로 될 때마다 (button을 누르거나 Enter를 누를 때마다) submit이 되어 페이지가 새로고침되는 문제가 발생한다. 이 문제를 해결해야한다.
-### Login Form에서 Submit 기본 설정 변경하기
-- Submit에 성공한다면 (엔터, 버튼 클릭) 브라우저는 성공되는 즉시 페이지를 새로고침한다.
-- 이제는 Button Listener를 없애고, Submit Listener를 작성해야한다.
-- EventListener는 첫번째 argument로 여러 정보를 전송한다. (확인코드 있음)
-- preventDefault를 호출하기 위해 eventListener 첫번째 argument 추가.
-### Login User에게 인사하기. (From은 제거)
-- 방법1 : HTML 태그 직접 제거
-- 방법2 : CSS hidden 함수 사용!
-- 1. CSS 파일에 클래스 네임 선언(hidden)=> display: none;
-- 2. submit 되면, classname에 hidden을 추가하면 끝 (EventListener)
-- form 이름.classList.add("hidden"); 
-- 문자열 결합 시 ₩Hello ${변수명}₩
+## Refresh
+<img width="80%" alt="refresh1" src="https://user-images.githubusercontent.com/68676844/138114450-b243fa76-f3a0-42c4-809f-be07435bb0cb.png">
+<img width="80%" alt="refresh2" src="https://user-images.githubusercontent.com/68676844/138114455-71e671df-d39b-4cfc-a20c-b3b09c3f58ac.png">
+### Random Background and Quote.
+```javascript:backgroud.js
+
+const images = ["BG_01.jpg", "BG_02.jpg", "BG_03.jpg", 
+                "BG_04.jpg", "BG_05.jpg", "BG_06.jpg",
+                "BG_07.jpg","BG_08.jpg","BG_09.jpg"];
+const chosenImages = images[Math.floor(Math.random() * images.length)];
+```
+Math 모듈을 사용하여 새로고침할 때마다 사진, 인용구를 랜덤으로 바꾼다.
 ### Local Storage
-- 작은 DB라고 생각하면 된다.
-- 새로고침해도 없어지지 않음.
-- 이를 이용하여 userName이 있다면, 자동 로그인처럼 기능만들 수 있음.
-- 우선 form 과 h1 모두 숨겨진 상태로 브라우저 시작.
-- getItem을 통해 null이면 form을 제공, 아니라면 h1 제공하여 구현.
+User 이름, 할 일 등을 Local Storage에 저장하여, 새로고침을 하더라도 초기화되지 않도록 한다.
+```javascript:greeting.js
 
-## Clock
-### interver
-- x 초 마다 반복되어 실행되는 함수
-- setInterval( 함수명, ms기준 반복 주기)
-### setTimeout
-- x초 후 딱 한 번ㅁ나 실행되는 함수
-- setTimeout( 함수명, ms 기준 시간)
-### Data Object
-- Date : 오늘 날짜의 객체 생성.
-- Date. 함수명 => getDate() 등
-- 객체에서 날짜, 시간, 요일 등을 불러올 수 있음.
-### 시간 형식
-- 1 등 10 이하의 숫자를 출력할 때 01 두자리 수로 출력하기
-- padStart() function으로 정의되어있음.
-- string.padStart(2, "0"); // string의 길이는 2, 2가 아니라면 앞에 "0"을 추가한다.
-- padEnd()는 앞에 추가하는 것이 아니라 뒤에 추가하는 것
+const savedUserName = localStorage.getItem(USERNAME_KEY);
+if (savedUserName == null){
+    //show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit)
+} else{
+    paintGreeting(savedUserName);
+}
+```
 
-## Quotes
-- 명언을 list에 담는다. (quote, author 각각)
-- random으로 불러온다.
-### randomness
-- Math 모듈에 포함되어있음.
-- Math.random은 0부터 1까지의 무작위 수를 반환한다. (float형)
-- Math.random * 10 // 0 ~ 10까지의 무작위 수 반환
-- 정수형 변환 (round, ceil, floor)
-- round // 반올림
-- ceil // 올림
-- floor // 내림
-- Math.floor(Math.random * 10) // 0~10까지 무작위 정수를 반환
+## Mouse over
+<img width="80%" alt="mousePointer" src="https://user-images.githubusercontent.com/68676844/138114576-b530fee8-86b5-4f1d-8535-405cfc939f2a.png">
+X에 포인터를 올리면, 마우스의 모양을 손가락 모양으로 바꾸어 직관성을 높인다.
+```css:style.css
 
-## Random Background
-- 새로고침할 때 마다 새로운 이미지로 변경하는 방법
-- 무작위 정수를 반환하는 방법으로 랜덤 이미지 선택
-- Name = document.createElement("img") 로 이미지 태그 만들기
-- Name.src ( img/랜덤이미지 )
-- document.body.appendChild(Name); HTML body에 img 추가된다.
-
-## Todo List
-- submit의 기본 동작을 막아 리스트가 추가될 때 마다 새로고침 되는 것을 방지.
-- inputText.value를 통해 submit이 일어날 때 값을 저장해 놓고, 초기화 새 리스트를 받을 수 있도록 설정
-- li와 span tag를 추가하여 (createElement, appendChild) 각 리스트를 추가할 수 있지만, 새로고침을 하면 없어지는 문제 발생.
-
-## Todo List 삭제
-- 할 일 입력 -> enter = 등록 : 이 곳에 x라는 버튼을 놓고 싶음
-- 할 일이 5개일 때, 어떤 리스트를 삭제할지 알지 못함 (모두 동일한 event listener를 사용)
-- dir을 이용해 찾아보니 parentNode 속성 값이 다름을 알 수 있음.
-- event.target.parentElement로 저장 후 remove 함수로 삭제
-
-##Todo List 저장
-- 현재 문제 : 새로고침하면 모두 사라짐
-- 해결 방법 : Local Storage에 저장
-- 배열에 Todo List를 저장하고, 이를 다시 Local Storage에 저장한다. (Text만 저장할 수 있음)
-- 새로고침 후 두가지 문제 발생 : 화면에 나타나지 않음, 새로운 할 일 적으면 Local Storage 초기화 후 저장됨 => JSON 사용
-- JSON:stringify(대상) : 대상을 string으로 바꿔줌
-
-## Local Storage에서 불러오기
-- 현재 문제 : Local Storage에는 저장되어있지만, 새로고침했을 때 나오지 않음
-- JSON.parse() : text를 특정 형태로 알아서  바꾸어줌. 
-- javaScript은 배열에서 foreach라는 함수를 지원한다. 배열의 요소가 함수를 차례대로 실행 (요소의 개수만큼 함수가 반복적으로 실행된다.) arrow function으로 사용했음(일반 함수도 가능)
-- 새로고침 시 Local storage가 초기화되는 문제는 저장하는 변수를 let으로 선언 후 업데이트
-- 해결하지 못한 문제 : 삭제 버튼을 눌러도 Local Storage에서 삭제되지 않음
-- array를 id와 text를 저장할 수 있도록 바꾸어 저장!
+button:hover{
+    cursor : pointer;
+}
+```
