@@ -1,6 +1,6 @@
 # Momentum
 Todo Web site (HTML, CSS, JavaScript)
-
+직접 해보고 싶다면, [여기](https://jiwon1923.github.io/Momentum/ "Jiwon's momentum 바로가기")를 클릭하세요.
 ## Initial Screen
 <img width="80%" alt="initial" src="https://user-images.githubusercontent.com/68676844/138104758-2a827f3b-0d06-4215-89c1-adb166df136a.png">
 
@@ -21,7 +21,27 @@ setInterval(getClock, 1000);
 ```
 
 ### Weather
+
 openweathermap의 Current Weather Data를 사용하여 온도, 날씨, 지역을 표기한다.
+
+```javascript:weather.js
+
+function onGeoSuccess(position){ // CurrentPosition 성공 시 실행되는 함수
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+        const weather = document.querySelector("#weather span:first-child")
+        const city = document.querySelector("#weather span:last-child")
+        const name = data.name;
+        weather.innerText =  `${data.weather[0].main} / ${data.main.temp}℃`;
+        city.innerText = `\n${name}`;
+    });
+}
+```
+
 ## Login
 <img width="80%" alt="login" src="https://user-images.githubusercontent.com/68676844/138104863-2cc3ea77-7280-41aa-953d-0e97d5f20142.png">
 User가 이름을 등록하면, Login 입력창을 숨기고, 할 일 입력 창을 띄운다.
@@ -37,7 +57,7 @@ function paintGreeting(userName){
 ```
 
 ## New To do
-<img width="1440" alt="newToDo" src="https://user-images.githubusercontent.com/68676844/138114158-ca268d7b-7cf0-43e7-a03b-f5665f225574.png">
+<img width="80%" alt="newToDo" src="https://user-images.githubusercontent.com/68676844/138114158-ca268d7b-7cf0-43e7-a03b-f5665f225574.png">
 
 ## Refresh
 <img width="80%" alt="refresh1" src="https://user-images.githubusercontent.com/68676844/138114450-b243fa76-f3a0-42c4-809f-be07435bb0cb.png">
