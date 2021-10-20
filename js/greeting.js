@@ -1,6 +1,8 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
+//const greeting = document.querySelector("#greeting");
+const greeting = document.querySelector("#todo-form input");
+const toDo = document.querySelector("#todo-form");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
@@ -14,8 +16,10 @@ function onLoginSubmit(event){
 }
 
 function paintGreeting(userName){
-    greeting.innerText = `Hello ${userName}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    //greeting.innerText = `${userName}의 할 일!`;
+    //greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.placeholder = `${userName}의 할 일`;
+    toDo.classList.remove(HIDDEN_CLASSNAME);
 }
 const savedUserName = localStorage.getItem(USERNAME_KEY);
 if (savedUserName == null){

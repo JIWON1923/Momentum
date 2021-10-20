@@ -1,3 +1,90 @@
+body{
+    text-align: center;
+    margin:0;
+}
+
+input{
+    position:absolute;
+    transform:translateX(-50%); left:50%; top:30%;
+    width:300px;
+    height:35px;
+    font-family: "Inter UI", sans-serif, monospace;
+    border:2px solid white;
+    background: transparent;
+    border-radius: 10px;
+    color:white; font-size:20px;
+}
+
+input:hover{
+    border:3px solid white;
+}
+
+input::placeholder{
+    color:white;
+    text-align: center;
+}
+button{
+    position:absolute;
+    background: transparent;
+    border:none;
+    color:tomato;
+    font-size:20px;
+    font-weight: bold;
+}
+button:hover{
+    cursor: pointer; /* 손가락 모양으로 변경 */
+}
 .hidden{
     display: none;
+}
+
+.backgroud{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
+#clock{
+    position:absolute; /* 원래 위치와 상관없이 지정, 상위 요소 기준으로 설정됨. */
+    transform:translateX(-50%); left:50%; /* 가운데 정렬 */
+    font-size:100px;
+    color:white;
+    top:40px;
+    
+}
+#quote{
+    position:absolute;
+    color:white;
+    bottom:40px;
+    right:80px;
+}
+
+#greeting{
+    position:absolute;
+    right:20%;
+    top:50px;
+    color:lightgoldenrodyellow;
+}
+#todo-list{
+    position: absolute;
+    left:50%; top:35%; transform: translateX(-50%);
+    color:white;
+    font-size: 20px;
+    padding: 0px;
+    list-style: none;
+}
+#todo-list li{
+    padding-top: 10px;
+}
+#todo-list span{ /* inline에 width 속성을 주기 위해 block으로 변경 후 주었다.*/
+    display: inline-block;
+    width:150px;
+}
+
+#todo-list button{
+    text-align: end;
+}
+#weather{
+    position: absolute;
+    right:3%; top:3%;
+    color:white;
 }

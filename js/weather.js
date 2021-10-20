@@ -9,8 +9,8 @@ function onGeoSuccess(position){ // CurrentPosition 성공 시 실행되는 함�
         const weather = document.querySelector("#weather span:first-child")
         const city = document.querySelector("#weather span:last-child")
         const name = data.name;
-        weather.innerText =  `${data.weather[0].main} / ${data.main.temp}`;
-        city.innerText = data.name
+        weather.innerText =  `${data.weather[0].main} / ${data.main.temp}℃`;
+        city.innerText = `\n${name}`;
     });
 }
 function onGeoError(){ // CurrentPosition Error 발생 시 실행되는 함수
